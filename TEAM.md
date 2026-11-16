@@ -47,6 +47,7 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Đóng góp cụ thể
 
 - Phạm vi và công cụ AI được ghi trong [báo cáo cá nhân](report/team/2A202603646_NguyenManhTuong.md); không khai báo thành viên giả.
+- Bổ sung B4: rules-only, swarm pruned, thống kê bootstrap/kiểm định cặp và 9 test trong `src/tests/test_bonus_b4.py`. Commit mở rộng: 5e4d628c890e7781606e3d28d54016bf0d6e2111.
 
 ### Bằng chứng
 

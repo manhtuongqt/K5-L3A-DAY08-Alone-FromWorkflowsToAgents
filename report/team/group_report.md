@@ -3,8 +3,8 @@
 ## 1. Thông tin nhóm
 
 - Nhóm NguyenManhTuong, một thành viên: Nguyễn Mạnh Tường — 2A202603646 — L3A.
-- Commit kỹ thuật chốt: b1120c2aeb12e2e0a185693d4abd6b766a10d4f5, trùng ADR. Commit tài liệu sau đó chỉ bổ sung hồ sơ nộp.
-- Phạm vi: bài chính, không xin điểm bonus. Hidden chính thức chưa có kết quả.
+- Commit kỹ thuật chốt: 5e4d628c890e7781606e3d28d54016bf0d6e2111, trùng ADR. Commit tài liệu sau đó chỉ bổ sung hồ sơ nộp.
+- Phạm vi: bài chính và bonus B4. Hidden chính thức chưa có kết quả; chưa tự nhận được cộng điểm.
 
 ## 2. Mục tiêu và cách tiếp cận
 
@@ -40,7 +40,7 @@ Số liệu từ `src/reports/benchmark.json`: 14 claim × seed 11,22,33,44,55; 
 
 Swarm fail C-002 seed 55: ticket nói trễ 5 ngày, order là 2 ngày; reference override dẫn tới refund thay vì denied. Đây là lỗi đã được giữ nguyên trong report, không sửa fixture hoặc swarm để tăng điểm.
 
-Crash suite chính thức đạt 20/20 trong `src/reports/crash.json`. Suite này kiểm host/swarm; ba shape tự viết còn qua T11/T12 và 6 test bổ sung trước effect/sau checkpoint. Host và test mới: 69 passed, student: 248 passed. Benchmark chạy lại được so sánh toàn bộ controlled_variables, 280 trial và summary; bằng chứng ở `src/reports/verification.json` và `benchmark_reproduced.json`.
+Crash suite chính thức đạt 20/20 trong `src/reports/crash.json`. Suite này kiểm host/swarm; ba shape tự viết còn qua T11/T12 và 6 test bổ sung trước effect/sau checkpoint. Host và test mới: 78 passed, student: 248 passed. Benchmark chạy lại được so sánh toàn bộ controlled_variables, 280 trial và summary; bằng chứng ở `src/reports/verification.json` và `benchmark_reproduced.json`.
 
 Tôi chọn workflow theo [ADR](decision_adr.md): cùng độ đúng public với single/orchestrator nhưng ít tự chủ và chi phí thấp hơn. [Research card](research_card.md) chọn R4, ablation bỏ riêng draft cuối: vẫn 70/70 và 14/14 pass^5, cost 28.871429 → 27.857143, model call 1 → 0, tool call không đổi. Không suy ra chất lượng lời đáp giữ nguyên vì grader không chấm câu chữ.
 
@@ -51,11 +51,13 @@ Hidden chính thức cần ≥0.75 trên 40 claim × 5 seed; hiện chưa có pa
 - Máy không có Python launcher `py`; dùng `python` 3.11.9 tạo src/.venv và gọi trực tiếp .venv/Scripts/python.exe, không phụ thuộc activate.
 - MockLLM không sinh tool JSON: dùng controller trạng thái theo contract runtime, ghi rõ đây là mô phỏng thay vì khẳng định model tự suy luận tiền.
 - T13/T14 dễ nhầm quote với effect: giữ quote đầy đủ cho host, kiểm ledger và audit thực qua evaluator.
-- Số host test thực tế của phiên bản clone là 54, khác ví dụ tài liệu ghi 52; sau 15 test bổ sung là 69. Không sửa test để khớp số hướng dẫn.
+- Số host test thực tế của phiên bản clone là 54, khác ví dụ tài liệu ghi 52; thêm 15 test bài chính và 9 test B4 thành 78. Không sửa test để khớp số hướng dẫn.
 
-Bằng chứng trên Windows: `py -0p` trả lỗi không nhận diện lệnh `py`. Cách chạy thay thế là `python -m venv src/.venv` ở gốc repo, rồi `.venv/Scripts/python.exe -m pytest -q` trong src. Output kiểm chứng: `69 passed, 248 deselected`; lệnh `.venv/Scripts/python.exe -m pytest -q -m student -o addopts=` cho `248 passed, 69 deselected`. Output đầy đủ của hai lệnh test được lưu trong `src/reports/verification.json`.
+Bằng chứng trên Windows: `py -0p` trả lỗi không nhận diện lệnh `py`. Cách chạy thay thế là `python -m venv src/.venv` ở gốc repo, rồi `.venv/Scripts/python.exe -m pytest -q` trong src. Output kiểm chứng: `78 passed, 248 deselected`; lệnh `.venv/Scripts/python.exe -m pytest -q -m student -o addopts=` cho `248 passed, 78 deselected`. Output đầy đủ của hai lệnh test được lưu trong `src/reports/verification.json`.
 
 ## 6. Tổng hợp đóng góp
+
+Bổ sung B4: rules-only và swarm pruned cùng 70/70 public; bootstrap theo claim và exact McNemar/sign test cho thấy chưa đủ bằng chứng khác biệt có ý nghĩa (p=1.0). Safety replay 350 trial không ghi nhận leak/bypass. [Báo cáo bonus](bonus_report.md) tách riêng theo giới hạn 2 trang; không gộp số liệu bonus vào benchmark bài chính.
 
 Nhóm một người; bảng đóng góp trong TEAM.md và [báo cáo cá nhân](2A202603646_NguyenManhTuong.md) ghi phạm vi, test, commit và mức hỗ trợ của Codex. Không có phỏng vấn/review độc lập hoặc thành viên thứ hai được khai báo.
 

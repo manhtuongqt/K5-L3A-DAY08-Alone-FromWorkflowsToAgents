@@ -1,6 +1,6 @@
 # Bài làm Day08 — Nguyễn Mạnh Tường
 
-Nhóm NguyenManhTuong, MSSV 2A202603646. Repo nhánh main; code chốt xem ADR. Đây là bài chính, không nhận điểm bonus dù module ablation được đặt trong thư mục bonus theo cơ chế extra-shape của đề.
+Nhóm NguyenManhTuong, MSSV 2A202603646. Repo nhánh main; code bài chính xem ADR. Đã làm bài chính và mở rộng bonus B4; được cộng điểm hay không còn phụ thuộc gate hidden của giảng viên. Ablation research card ban đầu vẫn giữ riêng để đối chiếu.
 
 ## Cài và chạy
 
@@ -17,6 +17,8 @@ cd src
 .venv/Scripts/python.exe -m lab8.benchmark --shapes workflow,single,orchestrator,swarm --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/benchmark.json
 .venv/Scripts/python.exe -m lab8.benchmark --shapes workflow,workflow_no_draft --extra-shape workflow_no_draft=bonus.workflow_no_draft:run_claim --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/research_ablation.json
 .venv/Scripts/python.exe -m bonus.verify_public
+.venv/Scripts/python.exe -m bonus.run_b4
+.venv/Scripts/python.exe -m bonus.verify_b4
 .venv/Scripts/python.exe -m lab8.check_submission
 ```
 
@@ -42,6 +44,7 @@ macOS/Linux dùng python3 tạo venv, sau đó gọi .venv/bin/python thay .venv
 - reports/crash.json: crash_test chính thức tạo, không sửa tay.
 - reports/verification.json: smoke, test, replay benchmark và hash file host/config/data giữ nguyên.
 - reports/benchmark_reproduced.json: benchmark lần hai độc lập, đối chiếu toàn bộ report.
+- [Bonus B4](../report/team/bonus_report.md): reports/bonus_benchmark.json, bonus_ablation.json, bonus_verification.json; 9 test trong tests/test_bonus_b4.py.
 - [Báo cáo nhóm](../report/team/group_report.md), [ADR](../report/team/decision_adr.md), [research card](../report/team/research_card.md), [cá nhân](../report/team/2A202603646_NguyenManhTuong.md).
 
 JSON không sửa tay; trace/SQLite là đầu ra local bị ignore. Raw ticket và parent secret không có trong trace. Mọi con số cost là mô phỏng, không phải tiền API thực.

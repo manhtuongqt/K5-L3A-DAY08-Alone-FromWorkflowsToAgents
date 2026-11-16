@@ -16,7 +16,7 @@ README, CHECKPOINTS, RUBRIC, RULES, SUBMISSION, TEAM; src/README, src/reports/RE
 | C4 Policy, 10 điểm | Matrix kiểm approval, policy, T13/T14; quote đầy đủ do host xử lý | Public đạt; approval_bypass_count hidden chưa có |
 | C5 Handoff/trace, 10 điểm | make_handoff, investigator chỉ đọc; trace contract; test injection và output không lộ dữ liệu | Public đạt; secret_leak_count/pii_leak_count hidden chưa có |
 | C6 Benchmark/quyết định, 10 điểm | 4 × 14 × 5 = 280 trial, ADR, research card và ablation 140 trial | Đủ bằng chứng; giữ giới hạn MockLLM |
-| C7 Tái lập, 10 điểm | Commit kỹ thuật b1120c2; run ID; benchmark lần hai khớp toàn bộ; lệnh chạy trong hướng dẫn | Đạt trên Windows/Python 3.11.9; không nhận đã kiểm đa nền tảng |
+| C7 Tái lập, 10 điểm | Commit kỹ thuật hiện tại 5e4d628 (đã thêm B4), gốc bài chính b1120c2; run ID; benchmark lần hai khớp toàn bộ; lệnh chạy trong hướng dẫn | Đạt trên Windows/Python 3.11.9; không nhận đã kiểm đa nền tảng |
 | C8 Đóng góp, 5 điểm | Một thành viên trong TEAM; commit b1120c2 có ba shape và 15 test; báo cáo cá nhân riêng | Đủ hồ sơ kỹ thuật; người học cần đọc và hoàn thiện tự đánh giá |
 
 Không cộng các dòng này thành điểm tự chấm. C2 và phần safety trên hidden chỉ có thể xác nhận bằng kết quả chính thức. Không phát hiện thiếu code hay bằng chứng public bắt buộc qua lần rà này.
@@ -53,4 +53,4 @@ Tên repo đúng mẫu nhóm L3A và repo public. Commit trong ADR tồn tại, 
 - Chấm hidden 40 claim × 5 seed: pass rate ≥0.75 và không approval bypass/secret leak, cùng yêu cầu crash 20/20. Không tự tạo hidden_grade.json.
 - API GitHub kiểm tra thời điểm rà soát cho biết repo public và chưa có workflow run. CI đa nền tảng chưa có bằng chứng; CI không phải deliverable riêng bắt buộc và báo cáo không nhận đã chạy ở ba hệ điều hành.
 
-Bonus tùy chọn chưa làm. Module trong src/bonus hiện phục vụ ablation bắt buộc và kiểm chứng kỹ thuật, không phải hồ sơ xin điểm cộng. Báo cáo nhóm được giữ ngắn ở Markdown; khi xuất bản in/PDF để trình bày cần giữ giới hạn 5 trang ngoài phụ lục.
+Đã bổ sung bonus B4 sau lần rà bài chính: rules-only, swarm pruned, bootstrap 95% CI theo claim, exact McNemar/sign test, safety replay và report tái lập byte-identical. Có 9 test bonus mới; tổng host/test bổ sung hiện là 78, student vẫn 248. Xem report/team/bonus_report.md và src/reports/bonus_ablation.json. Điều kiện tính bonus là hidden ≥0.80 cùng must-pass, chưa được xác nhận. Báo cáo nhóm giữ ngắn ở Markdown; khi xuất PDF cần giữ giới hạn 5 trang ngoài phụ lục, bonus riêng tối đa 2 trang.
