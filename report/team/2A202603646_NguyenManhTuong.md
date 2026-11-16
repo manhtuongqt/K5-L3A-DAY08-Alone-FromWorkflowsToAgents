@@ -52,4 +52,3 @@ Giới hạn quan trọng là MockLLM, 14 claim public và việc đã biết l�
 4. Handoff/trace chỉ chứa dữ kiện được phép; không ghi raw ticket, parent secret, header hoặc PII.
 5. Không dùng số bước trace làm latency; các giá VND trong báo cáo là mô phỏng.
 
-Báo cáo được Codex hỗ trợ soạn từ code và kết quả chạy thực tế. Tôi chịu trách nhiệm đọc, giải thích bài làm và tự nộp link repo qua tài khoản LMS của mình.
