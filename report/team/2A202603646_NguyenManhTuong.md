@@ -4,9 +4,11 @@
 
 - Họ tên: Nguyễn Mạnh Tường. MSSV: 2A202603646. Lớp: L3A.
 - Email: chưa cung cấp. GitHub: [manhtuongqt](https://github.com/manhtuongqt).
-- Nhóm: NguyenManhTuong, một thành viên.
+- Nhóm: Alone, một thành viên.
 
 ## 2. Phần việc phụ trách
+
+Tôi là thành viên duy nhất của nhóm Alone và phụ trách toàn bộ bài chính, bonus B4, kiểm thử, benchmark và báo cáo. Toàn bộ phần việc của nhóm được ghi dưới tên tôi; không có thành viên khác cùng thực hiện.
 
 Phạm vi bài của tôi gồm workflow, single ReAct, orchestrator, test an toàn và báo cáo so sánh với swarm có sẵn. Tôi dùng Codex hỗ trợ viết code, chạy lệnh và soạn báo cáo từ kết quả thực thi. Không khai báo người cộng tác giả hoặc người review độc lập.
 

@@ -2,7 +2,8 @@
 
 ## 1. Thông tin nhóm
 
-- Nhóm NguyenManhTuong, một thành viên: Nguyễn Mạnh Tường — 2A202603646 — L3A.
+- Nhóm Alone, một thành viên: Nguyễn Mạnh Tường — 2A202603646 — L3A.
+- Tôi là thành viên duy nhất và phụ trách toàn bộ bài của nhóm Alone: ba shape, kiểm thử an toàn, benchmark, research card, bonus B4 và các báo cáo. Không có thành viên khác tham gia phân công.
 - Commit kỹ thuật chốt: 5e4d628c890e7781606e3d28d54016bf0d6e2111, trùng ADR. Commit tài liệu sau đó chỉ bổ sung hồ sơ nộp.
 - Phạm vi: bài chính và bonus B4. Hidden chính thức chưa có kết quả; chưa tự nhận được cộng điểm.
 

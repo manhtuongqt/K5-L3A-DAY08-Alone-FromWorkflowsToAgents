@@ -2,21 +2,18 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm: NguyenManhTuong (nhóm một thành viên)
+- Tên nhóm: Alone (nhóm một thành viên)
 - Lớp: L3A
-- Repo nhóm: `K5-L3A-DAY08-NguyenManhTuong-FromWorkflowsToAgents`
-- URL repo, nhánh nộp, commit chốt: https://github.com/manhtuongqt/K5-L3A-DAY08-NguyenManhTuong-FromWorkflowsToAgents ; main; commit kỹ thuật xem ADR.
+- Repo nhóm: `K5-L3A-DAY08-Alone-FromWorkflowsToAgents`
+- URL repo, nhánh nộp, commit chốt: https://github.com/manhtuongqt/K5-L3A-DAY08-Alone-FromWorkflowsToAgents ; main; commit kỹ thuật xem ADR.
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-| 1 | Nguyễn Mạnh Tường | 2A202603646 | Chưa cung cấp | manhtuongqt | Phụ trách bài nhóm một người; dùng Codex hỗ trợ triển khai và kiểm chứng kỹ thuật |
+| 1 | Nguyễn Mạnh Tường | 2A202603646 | Chưa cung cấp | manhtuongqt | Thành viên duy nhất, phụ trách toàn bộ bài chính, bonus B4, kiểm thử và báo cáo; sử dụng Codex hỗ trợ |
 
-Gợi ý chia vai:
-
-- Nhóm 6 người: integration; workflow; single agent; orchestrator; ledger/policy/crash; eval/report.
-- Nhóm 4 người: workflow + integration; single; orchestrator + handoff; ledger + evaluation.
+Nhóm Alone có một thành viên. Nguyễn Mạnh Tường phụ trách toàn bộ các phần việc, không phân công cho thành viên khác. Công cụ AI đã sử dụng và phạm vi hỗ trợ được ghi trong báo cáo cá nhân theo RULES.md.
 
 ## Bảng đóng góp
 

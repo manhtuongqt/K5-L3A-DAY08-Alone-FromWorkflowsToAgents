@@ -2,7 +2,7 @@
 
 ## Bài làm — Nguyễn Mạnh Tường, 2A202603646, L3A
 
-Nhóm một thành viên `NguyenManhTuong`. Đã triển khai ba shape và giữ nguyên swarm tham chiếu. Runtime dùng MockLLM offline, không dùng API key hay Docker.
+Nhóm một thành viên `Alone`. Đã triển khai ba shape và giữ nguyên swarm tham chiếu. Runtime dùng MockLLM offline, không dùng API key hay Docker.
 
 - Public benchmark: workflow/single/orchestrator **70/70** mỗi shape; swarm **69/70**.
 - Host và test bổ sung **78 passed** (gồm 9 test bonus); student matrix **248 passed**; crash suite **20/20**.

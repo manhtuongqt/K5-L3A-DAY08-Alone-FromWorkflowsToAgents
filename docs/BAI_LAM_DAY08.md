@@ -1,6 +1,6 @@
 # Bài làm Day08 — Nguyễn Mạnh Tường
 
-Nhóm NguyenManhTuong, MSSV 2A202603646. Repo nhánh main; code bài chính xem ADR. Đã làm bài chính và mở rộng bonus B4; được cộng điểm hay không còn phụ thuộc gate hidden của giảng viên. Ablation research card ban đầu vẫn giữ riêng để đối chiếu.
+Nhóm Alone, MSSV 2A202603646. Repo nhánh main; code bài chính xem ADR. Đã làm bài chính và mở rộng bonus B4; được cộng điểm hay không còn phụ thuộc gate hidden của giảng viên. Ablation research card ban đầu vẫn giữ riêng để đối chiếu.
 
 ## Cài và chạy
 
