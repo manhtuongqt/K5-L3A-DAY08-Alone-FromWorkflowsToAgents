@@ -1,0 +1,201 @@
+{
+  "checked_at": "2026-11-16T10:20:53.033644+00:00",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "checks": [
+    {
+      "command": "python -m lab8.smoke",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "lab8.smoke pass\npython 3.11.9 | Windows AMD64\nmanifest 1.1 | MockLLM seeded | swarm C-001 refund 35000 | trace clean\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m pytest -q",
+      "passed": true,
+      "returncode": 0,
+      "stdout": ".....................................................................    [100%]\n69 passed, 248 deselected in 4.59s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m pytest -q -m student -o addopts=",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "........................................................................ [ 29%]\n........................................................................ [ 58%]\n........................................................................ [ 87%]\n................................                                         [100%]\n248 passed, 69 deselected in 16.70s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m lab8.crash_test --count 20 --out reports/crash.json",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "crash_safety 20/20\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m lab8.benchmark --shapes workflow,single,orchestrator,swarm --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/benchmark_reproduced.json",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "shape              pass   pass^5        var    min    max   cost/success    steps\n----------------------------------------------------------------------------------\nworkflow          1.000    1.000   0.000000  1.000  1.000          28.87     5.43\nsingle            1.000    1.000   0.000000  1.000  1.000          39.15    11.64\norchestrator      1.000    1.000   0.000000  1.000  1.000          48.72     8.21\nswarm             0.986    0.929   0.000816  0.929  1.000          49.57     2.80\n               lỗi hay gặp: status resolved != denied x1\ncost is simulated VND, not an API bill. latency: unavailable\nwrote reports\\benchmark_reproduced.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "whole_public_benchmark_reproduces",
+      "passed": true,
+      "scope": "controlled variables, all 280 trials, summaries; not just rounded rates"
+    },
+    {
+      "name": "official_host_and_measurement_files_unchanged",
+      "passed": true,
+      "files": [
+        {
+          "path": "src/lab8/__init__.py",
+          "unchanged": true,
+          "blob": "ef94c2b103c108c64b0a608cba2b4fcd22056c73"
+        },
+        {
+          "path": "src/lab8/app.py",
+          "unchanged": true,
+          "blob": "4824aaee885d748244c02ebc222f84d6bd2caa8b"
+        },
+        {
+          "path": "src/lab8/benchmark.py",
+          "unchanged": true,
+          "blob": "6ff30951e49c32671c6950a4fcbd5582f66a3ef8"
+        },
+        {
+          "path": "src/lab8/check_submission.py",
+          "unchanged": true,
+          "blob": "ab5e905b3f73bbff0a08e83f0a20088c3741d64d"
+        },
+        {
+          "path": "src/lab8/compensation.py",
+          "unchanged": true,
+          "blob": "f56f2c68559e133f9635b0a69df93da8fce64622"
+        },
+        {
+          "path": "src/lab8/config_loader.py",
+          "unchanged": true,
+          "blob": "83adfafec72ab6bce3665661a1006e5b372e811f"
+        },
+        {
+          "path": "src/lab8/console.py",
+          "unchanged": true,
+          "blob": "5971ef3829159a86d8ce3c3a2f213f174b7b0358"
+        },
+        {
+          "path": "src/lab8/crash_test.py",
+          "unchanged": true,
+          "blob": "75833d2e4e3106799f9cc25b8be25e03566894aa"
+        },
+        {
+          "path": "src/lab8/db.py",
+          "unchanged": true,
+          "blob": "cd8f67bbe186887e543b360ca1f48358943da0b0"
+        },
+        {
+          "path": "src/lab8/durability.py",
+          "unchanged": true,
+          "blob": "150b8891e49add15f1ba26cd4cead1e8d0747203"
+        },
+        {
+          "path": "src/lab8/handoff.py",
+          "unchanged": true,
+          "blob": "201548a53f503bfa26f418bedd0920e2e0c8fa43"
+        },
+        {
+          "path": "src/lab8/metrics.py",
+          "unchanged": true,
+          "blob": "ee2dc436a181190431f0b1417e1e4050c4e56cda"
+        },
+        {
+          "path": "src/lab8/mock_llm.py",
+          "unchanged": true,
+          "blob": "105eb0ca795b17d4486ca164088753bcfcca1b92"
+        },
+        {
+          "path": "src/lab8/policy.py",
+          "unchanged": true,
+          "blob": "a3d8bd1de5e56c50a5aa60b275c1baf108cb4aed"
+        },
+        {
+          "path": "src/lab8/run.py",
+          "unchanged": true,
+          "blob": "db36fec4670cb6003420a76da22946e11e17165a"
+        },
+        {
+          "path": "src/lab8/runtime.py",
+          "unchanged": true,
+          "blob": "bd60a769443a358f1615b52697ddea0d3dd1fb31"
+        },
+        {
+          "path": "src/lab8/schemas.py",
+          "unchanged": true,
+          "blob": "76c9641a9da48768bf7640d92be61689dc19e4fa"
+        },
+        {
+          "path": "src/lab8/smoke.py",
+          "unchanged": true,
+          "blob": "85ea39c3f4a01d58cbced22d5a6fa8bd51211dd0"
+        },
+        {
+          "path": "src/lab8/tools.py",
+          "unchanged": true,
+          "blob": "f35a0e0bdc74783c83f6310575ed2d0d8e460416"
+        },
+        {
+          "path": "src/lab8/trace.py",
+          "unchanged": true,
+          "blob": "2ed4cd56e9d4df82dfa81c11abbfafecba165d10"
+        },
+        {
+          "path": "src/config/autonomy_policy.yaml",
+          "unchanged": true,
+          "blob": "8b31b9c8d3c6ba92a45000d815ac83f6294ffb72"
+        },
+        {
+          "path": "src/config/pricing.yaml",
+          "unchanged": true,
+          "blob": "a4f48020bd045003c51742056757cfedbeff0f84"
+        },
+        {
+          "path": "src/config/tools.manifest.v1.1.yaml",
+          "unchanged": true,
+          "blob": "e209f58919f5ad47993874060f5f8e24c67c7e16"
+        },
+        {
+          "path": "src/data/public_claims.jsonl",
+          "unchanged": true,
+          "blob": "9b65bcb40e1fcf1f8e5fb0fc7a7e488eaafb4ad8"
+        },
+        {
+          "path": "src/data/public_world_state.json",
+          "unchanged": true,
+          "blob": "5cd406a7915bf395ea19d664ae649f3afcb15888"
+        },
+        {
+          "path": "src/lab8/shapes/swarm_reference.py",
+          "unchanged": true,
+          "blob": "400fc89d16611f2ed42b44083e03bc70499a60b8"
+        },
+        {
+          "path": "src/lab8/shapes/common.py",
+          "unchanged": true,
+          "blob": "2dee2cd3b544d2e1e40b747171ff56cd0d497c67"
+        },
+        {
+          "path": "src/lab8/shapes/__init__.py",
+          "unchanged": true,
+          "blob": "8289b3d04f45b4e77ea8d60a0ffa1333902da4cd"
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "artifact_sha256": {
+    "benchmark.json": "24dcde7598bcc83f5de7f2adeb70ad8e67ee64a92647ef94982c75db7abbfcdc",
+    "crash.json": "b48c7c522b0ff21998b13a12417518d2247032f7a012b0653d647c68634208e8",
+    "research_ablation.json": "066bf9e39244b674f9525c33fff899225e9be4bfbad00bd14f15f9f52d7dcfdf"
+  },
+  "hidden_gate": "NOT EVALUATED: official instructor grader and hidden labels unavailable",
+  "bonus_points_claimed": false
+}
