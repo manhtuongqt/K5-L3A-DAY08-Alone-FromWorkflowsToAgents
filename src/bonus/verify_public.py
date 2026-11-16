@@ -55,6 +55,7 @@ def main():
     for name in ("benchmark.json", "crash.json", "research_ablation.json"):
         artifacts[name] = hashlib.sha256((root / "reports" / name).read_bytes()).hexdigest()
     record = {"checked_at": datetime.now(timezone.utc).isoformat(),
+              "scope": "Basic public gates; B4 verified separately in bonus_verification.json",
               "python": platform.python_version(), "platform": platform.platform(),
               "checks": checks, "passed": all(c["passed"] for c in checks),
               "artifact_sha256": artifacts,

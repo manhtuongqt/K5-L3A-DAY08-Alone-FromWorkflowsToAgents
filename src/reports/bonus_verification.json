@@ -1,0 +1,30 @@
+{
+  "topic": "B4",
+  "steps": [
+    {
+      "command": "python -m pytest -q tests/test_bonus_b4.py",
+      "returncode": 0,
+      "stdout": ".........                                                                [100%]\n9 passed in 0.39s\n",
+      "stderr": ""
+    },
+    {
+      "command": "python -m bonus.run_b4",
+      "returncode": 0,
+      "stdout": "shape              pass   pass^5        var    min    max   cost/success    steps\n----------------------------------------------------------------------------------\nworkflow          1.000    1.000   0.000000  1.000  1.000          28.87     5.43\nsingle            1.000    1.000   0.000000  1.000  1.000          39.15    11.64\nswarm             0.986    0.929   0.000816  0.929  1.000          49.57     2.80\n               lỗi hay gặp: status resolved != denied x1\nrules_only        1.000    1.000   0.000000  1.000  1.000          27.86     4.43\nswarm_pruned      1.000    1.000   0.000000  1.000  1.000          48.05     3.79\ncost is simulated VND, not an API bill. latency: unavailable\nwrote reports\\bonus_benchmark.json\nB4 report: reports/bonus_ablation.json\n",
+      "stderr": ""
+    }
+  ],
+  "checks": {
+    "bonus_commands_pass": true,
+    "whole_bonus_json_replays_byte_identically": true,
+    "basic_public_verification_passes": true,
+    "public_safety_counts_zero": true,
+    "basic_baselines_match": true
+  },
+  "passed": true,
+  "artifact_sha256": {
+    "reports/bonus_ablation.json": "56dde3b8ed7c02a1b6c1dc3a10b738489433bcaec8f4ec7fd1185bebb4f8244c",
+    "reports/bonus_benchmark.json": "821855a010c39cad0bd4c5a2b9bcae645ae94ce1a9277dbc70cf82e43638d12f"
+  },
+  "hidden_gate": "Not evaluated; instructor must confirm >=0.80 and must-pass gates."
+}
