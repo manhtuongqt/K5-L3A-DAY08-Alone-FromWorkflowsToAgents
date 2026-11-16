@@ -1,5 +1,20 @@
 # Lab 8 — From Workflows to Agents (LogiX-VN: một task, bốn kiến trúc)
 
+## Bài làm — Nguyễn Mạnh Tường, 2A202603646, L3A
+
+Nhóm một thành viên `NguyenManhTuong`. Đã triển khai ba shape và giữ nguyên swarm tham chiếu. Runtime dùng MockLLM offline, không dùng API key hay Docker.
+
+- Public benchmark: workflow/single/orchestrator **70/70** mỗi shape; swarm **69/70**.
+- Host và test bổ sung **69 passed**; student matrix **248 passed**; crash suite **20/20**.
+- Chọn **workflow**; có research ablation bỏ riêng draft, benchmark chạy lại và kiểm file thước đo giữ nguyên.
+- **Hidden chính thức chưa được chấm**; không dùng kết quả public để tự xác nhận gate hidden ≥75%.
+
+[Cài đặt, lệnh chạy và trạng thái checkpoint](docs/BAI_LAM_DAY08.md) · [Báo cáo nhóm](report/team/group_report.md) · [ADR](report/team/decision_adr.md) · [Research card](report/team/research_card.md) · [Báo cáo cá nhân](report/team/2A202603646_NguyenManhTuong.md) · [Demo](docs/DEMO_DAY08.md).
+
+Code, test và dự thảo báo cáo có Codex hỗ trợ; người học đọc, chuẩn bị giải thích và tự nộp LMS. Phần đề gốc được giữ ở dưới. Không khai báo đã nộp LMS hoặc đã được giảng viên chấm hidden.
+
+---
+
 AI20K K5, ngày 8. Nhóm xử lý claim hoàn phí vận chuyển của công ty giả lập LogiX-VN bằng **bốn kiến trúc** (workflow, single agent, orchestrator, swarm), rồi dựa trên số đo để chọn kiến trúc **ít tự chủ nhất mà vẫn làm được việc**. Dữ liệu là dữ liệu giả. Không cần GPU, API key hay internet trong giờ lab; chạy được trên Windows, macOS và Linux.
 
 **Loại bài:** Nhóm · **Thời lượng:** 4 giờ tại lớp (13:30–17:30) · **Deadline:** lớp sáng 23h59 GMT+7 ngày lab; lớp chiều/tối 11h59 GMT+7 ngày hôm sau ([SUBMISSION.md](SUBMISSION.md#deadline-gmt7))

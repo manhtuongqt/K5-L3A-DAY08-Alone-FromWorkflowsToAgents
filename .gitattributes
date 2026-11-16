@@ -4,4 +4,4 @@
 *.png binary
 *.pdf binary
 # Preserve bytes of generated evidence and its recorded SHA256 on Windows.
-src/reports/*.json -text
+src/reports/*.json -text whitespace=cr-at-eol
