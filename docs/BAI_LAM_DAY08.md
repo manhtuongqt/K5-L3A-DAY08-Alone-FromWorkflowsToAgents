@@ -36,6 +36,8 @@ macOS/Linux dùng python3 tạo venv, sau đó gọi .venv/bin/python thay .venv
 
 ## Bằng chứng
 
+- [Đối chiếu toàn bộ yêu cầu và các phần còn chờ](DOI_CHIEU_YEU_CAU_DAY08.md): đủ tám tiêu chí rubric và checklist nộp.
+
 - reports/benchmark.json và research_ablation.json: công cụ benchmark chính thức tạo.
 - reports/crash.json: crash_test chính thức tạo, không sửa tay.
 - reports/verification.json: smoke, test, replay benchmark và hash file host/config/data giữ nguyên.

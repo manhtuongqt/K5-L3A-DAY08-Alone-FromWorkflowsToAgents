@@ -53,6 +53,8 @@ Hidden chính thức cần ≥0.75 trên 40 claim × 5 seed; hiện chưa có pa
 - T13/T14 dễ nhầm quote với effect: giữ quote đầy đủ cho host, kiểm ledger và audit thực qua evaluator.
 - Số host test thực tế của phiên bản clone là 54, khác ví dụ tài liệu ghi 52; sau 15 test bổ sung là 69. Không sửa test để khớp số hướng dẫn.
 
+Bằng chứng trên Windows: `py -0p` trả lỗi không nhận diện lệnh `py`. Cách chạy thay thế là `python -m venv src/.venv` ở gốc repo, rồi `.venv/Scripts/python.exe -m pytest -q` trong src. Output kiểm chứng: `69 passed, 248 deselected`; lệnh `.venv/Scripts/python.exe -m pytest -q -m student -o addopts=` cho `248 passed, 69 deselected`. Output đầy đủ của hai lệnh test được lưu trong `src/reports/verification.json`.
+
 ## 6. Tổng hợp đóng góp
 
 Nhóm một người; bảng đóng góp trong TEAM.md và [báo cáo cá nhân](2A202603646_NguyenManhTuong.md) ghi phạm vi, test, commit và mức hỗ trợ của Codex. Không có phỏng vấn/review độc lập hoặc thành viên thứ hai được khai báo.
