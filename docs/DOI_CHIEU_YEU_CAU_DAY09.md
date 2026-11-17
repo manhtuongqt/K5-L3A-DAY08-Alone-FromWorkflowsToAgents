@@ -56,6 +56,7 @@ Các đường dẫn src/ trong bảng tính từ gốc repo; tài liệu ở do
 1. Detection M3 75% vì bỏ sót proposal bị tự trừ trước dù ledger=0; bổ sung code metric proposal, lên 100%.
 2. Full suite ban đầu 2 fail vì test Day09 làm bẩn registry SHAPES; sửa fixture của test mới, không đụng test/agent Day08.
 3. CI Core ban đầu block vì SHA CRLF/LF khác nhau. Sửa generator LF và thuộc tính Git, sinh lại report bằng script. Không đổi ngưỡng hoặc sửa JSON bằng tay.
+4. Job bổ sung dùng nhầm ci_check v1 cho chỉ số dẫn xuất v2. Giữ nguyên checker gốc; compare_reports đối chiếu tất cả aggregate và từng paired row của v2 để xác nhận tái lập.
 
 ## Phần còn thuộc người học / giảng viên
 

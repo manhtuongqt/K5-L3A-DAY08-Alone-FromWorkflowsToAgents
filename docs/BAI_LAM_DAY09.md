@@ -38,6 +38,7 @@ Report chỉ do script sinh. Những số tiền/secret/PII trong public fixture
 1. Chấm ledger không giải thích được proposal bị tự trừ trước ở C-013: thêm metric ProposalAmountCorrect; detection từ 75% lên 100%.
 2. Test thêm variant làm ảnh hưởng registry của test Day08 khi chạy chung: fixture test mới khôi phục registry sau mỗi test, không sửa Lab08.
 3. Hash eval-set khác Windows/Linux vì CRLF/LF: generator ghi LF và Git cố định LF cho eval-set JSONL. Sinh lại toàn bộ report bằng script, không đổi ngưỡng hoặc sửa số JSON.
+4. Job bổ sung ban đầu gọi ci_check Core v1 cho spec v2: checker đòi pass_hat_5 là một Evaluator riêng dù đây là chỉ số do aggregate tính. Giữ nguyên checker giảng viên và thêm compare_reports kiểm toàn bộ metrics/paired rows của v2, không bỏ qua chỉ số dẫn xuất.
 
 Bộ CI gốc Day08 và workflow eval-gate của đề được giữ nguyên. Workflow bổ sung kiểm toàn bộ test, nguồn bất biến, ratchet với base-spec của PR và traps. Trạng thái cuối xem tab Checks trên PR starter/d09, không lấy một job bị skip làm bằng chứng hoàn thành Advanced.
 
