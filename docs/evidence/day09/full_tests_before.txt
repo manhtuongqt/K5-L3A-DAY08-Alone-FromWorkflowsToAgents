@@ -1,0 +1,57 @@
+$ python -m pytest -q -o addopts=
+........................................................................ [ 18%]
+................................F.F..................................... [ 36%]
+........................................................................ [ 55%]
+........................................................................ [ 73%]
+........................................................................ [ 91%]
+................................                                         [100%]
+================================== FAILURES ===================================
+____________________ test_four_shapes_share_one_signature _____________________
+
+    def test_four_shapes_share_one_signature():
+>       assert set(SHAPES) == {"workflow", "single", "orchestrator", "swarm"}
+E       AssertionError: assert {'fixed', 'fl...'single', ...} == {'orchestrato...', 'workflow'}
+E         
+E         Extra items in the left set:
+E         'flaky_regression'
+E         'fixed'
+E         'honest_refactor'
+E         'seeded_regression'
+E         'slice_regression'
+E         Use -v to get more diff
+
+tests\test_public_contract.py:58: AssertionError
+_______________ test_extra_shape_registers_for_one_process_only _______________
+
+    def test_extra_shape_registers_for_one_process_only():
+        import pytest
+    
+        from lab8.app import register_extra_shapes
+    
+        try:
+            assert register_extra_shapes(["swarm_copy=lab8.shapes.swarm_reference:run_claim"]) == ["swarm_copy"]
+            assert SHAPES["swarm_copy"] is SHAPES["swarm"]
+            with pytest.raises(SystemExit):
+                register_extra_shapes(["swarm=lab8.shapes.swarm_reference:run_claim"])
+            with pytest.raises(SystemExit):
+                register_extra_shapes(["no_colon=lab8.shapes.swarm_reference"])
+        finally:
+            SHAPES.pop("swarm_copy", None)
+>       assert set(SHAPES) == {"workflow", "single", "orchestrator", "swarm"}
+E       AssertionError: assert {'fixed', 'fl...'single', ...} == {'orchestrato...', 'workflow'}
+E         
+E         Extra items in the left set:
+E         'flaky_regression'
+E         'fixed'
+E         'honest_refactor'
+E         'seeded_regression'
+E         'slice_regression'
+E         Use -v to get more diff
+
+tests\test_public_contract.py:81: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_public_contract.py::test_four_shapes_share_one_signature - ...
+FAILED tests/test_public_contract.py::test_extra_shape_registers_for_one_process_only
+2 failed, 390 passed in 29.69s
+
+exit_code=1

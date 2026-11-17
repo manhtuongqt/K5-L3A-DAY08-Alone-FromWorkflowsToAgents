@@ -1,0 +1,10 @@
+{
+  "protected_starter_files": 19,
+  "day08_base": "cf413f3fff56015b2f16833989e5f1e9726fba26",
+  "changed_paths_scanned": 107,
+  "tracked_paths_scanned": 213,
+  "errors": [],
+  "scope": "source boundary and common credential patterns; not a proof of no vulnerabilities"
+}
+
+exit_code=0

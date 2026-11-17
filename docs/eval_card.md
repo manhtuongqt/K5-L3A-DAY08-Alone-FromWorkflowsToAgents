@@ -42,3 +42,40 @@ Pilot ở đây là đánh giá offline bài toán claim một đơn, approvals 
 MockLLM deterministic không đại diện model thật. V1 chỉ 14 item, CI rộng; dữ liệu replay đã public không phải held-out mới. Metric reply_ledger_consistent kiểm tính nhất quán của số tiền quan sát được: swarm gốc không có reply event nên 1.0 không chứng minh toàn bộ trả lời đúng/đủ. Tiền trong ledger và proposal được đo riêng.
 
 Đổi eval set phải tăng eval_set_version và chạy baseline mới. Đổi spec cần version/giải thích, không nới threshold trong cùng eval-set version; code giữ ratchet. Không tuyên bố điểm hidden khi chưa có kết quả giảng viên.
+
+
+## V2 — slices, reliability và integrity
+
+Eval set v2 SHA 67dc2eec100f, 28 item × 5 seed, gồm đủ 14 public và 14 adversarial; labels_v2.json tách riêng. Spec 2.0 giữ floor pass_rate=.85 và refund_amount_correct=.90 của starter. Không nới ngưỡng cùng version. Mã gate/grader tại commit Core 544bdaf; script kiểm nguồn và test bổ sung được theo dõi riêng trên PR starter/d09.
+
+| Shape | Run ID | Pass rate | pass^5 | Gate |
+|---|---|---:|---:|---|
+| swarm | E-swarm-20261117-67dc | .9786 | .8929 | Merge khi tự so baseline |
+| fixed | E-fixed-20261117-67dc | 1 | 1 | Merge |
+| honest_refactor | E-honest_refactor-20261117-67dc | 1 | 1 | Merge |
+| seeded_regression | E-seeded_regression-20261117-67dc | .6429 | .6429 | Block |
+| slice_regression | E-slice_regression-20261117-67dc | .9357 | .8929 | Block duy nhất qua money_movement |
+| flaky_regression | E-flaky_regression-20261117-67dc | .9143 | .5714 | Block pass_hat_5, pass_rate CI và money_movement |
+
+Nguồn: reports/baseline_v2.json và eval_*_v2.json; [log mutation](evidence/day09/m7_mutation.txt). Cả fixed và honest_refactor không bị báo nhầm; chi phí honest_refactor tăng chỉ cảnh báo, không chặn vì đây là system metric không blocking.
+
+### Ngưỡng và slice
+
+- A/A dùng seeds 11/22/33/44/55 và 66/77/88/99/110: mọi Δ metric=0. [Output](evidence/day09/m6_aa.txt).
+- Floor pass_hat_5=.80, thấp hơn mức reference .8929 và khoảng biến động A/A bằng 0; được cấu hình trước khi chạy scorecard, không tối ưu sau theo variant. A/A xác nhận hợp lý trên MockLLM chứ không chứng minh floor tối ưu cho model thật.
+- money_movement: min=.90, no_significant_drop, blocking; có 12 item. slice_regression chỉ đạt .85 trong slice này, trong khi pass_rate chung .9357 vượt sàn và CI chung chạm 0.
+- adversarial: min=.85, no_significant_drop, blocking; có 14 item.
+- denial: min=.90, no_significant_drop, blocking; có 11 item.
+- pass@5 của flaky vẫn=1 nhưng pass^5=.5714; chỉ số “có ít nhất một lần đúng” che mất sự thiếu ổn định.
+
+### Integrity và ratchet
+
+Bốn trap public đều bị gate chặn exit 1: None/NaN, bỏ dòng fail, chọn seed đẹp, nới spec. Lệnh traps tổng exit 0 vì không trap nào lọt. [Log](evidence/day09/m7_traps.txt). Test bổ sung còn kiểm dòng trùng thay dòng, evaluator_failures trên run xanh, đổi slice, aggregate mâu thuẫn, và cơ chế lỗi không để event override.
+
+Ratchet cần base-spec tin cậy. Workflow gốc được giữ nguyên; workflow bổ sung day09-contract-and-integrity lấy spec từ commit base của PR, chạy full test, kiểm source và trap. Chỉ giữ metric/slices trong PR không đủ chứng minh không ai đã nới threshold.
+
+### Giới hạn cỡ mẫu
+
+Năm seed không bảo đảm phát hiện ổn định một lỗi có xác suất 1/3 hoặc thấp hơn, hay lỗi phụ thuộc những tình huống chưa có trong tập. Công tắc rare public bật khi seed chia hết cho 3; với năm seed hiện tại, nó bật đúng một seed. Không được đồng nhất cơ chế modulo của fixture với xác suất thật trên model ngoài đời. CI bootstrap trên ít item vẫn rộng; chưa chứng minh chất lượng production.
+
+Key anchor và hidden variants/traps không public. Các probe bổ sung chỉ kiểm hợp đồng, không thay thế kết quả chấm ẩn.

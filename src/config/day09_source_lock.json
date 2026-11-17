@@ -1,0 +1,25 @@
+{
+  "starter_commit": "d1b9471540727d693c9eb392667b9f0d8a998bf5",
+  "normalization": "CRLF to LF only",
+  "protected_starter_files": {
+    "src/lab9/ci_check.py": "4c15f4024eb42e0dbd3cda2a44d8257fbb7cc2d946a6114bc76cd805b88cf1e8",
+    "src/lab9/eval.py": "9b1e6c0e8c39955baf83afc74628a86f632fe880f090f85f1644a4d15fc5e6e5",
+    "src/lab9/judge.py": "bad6cf08a049980b569018c500f482177d4f11bbc48348c1ee9376d2ce3f915c",
+    "src/lab9/mutation.py": "9d77fb7aa670d68ac5a5295a5253d71c04901c75aae1d56512b4627bf0d5f0f2",
+    "src/lab9/smoke.py": "8804609388367e323c4bf1389fa19bf9b122ee3db1c27f1744b6b9ec5688ea37",
+    "src/lab9/trace_case.py": "fa8adc39e222dacd7cb61ee109a9d13e4bf337a0eb9e8b59a2c912ed210e1e91",
+    "src/lab9/traps.py": "4e7d659c33131e377c7fa1918abf92c651da5e25f1bdb2920b173e5182ea56c2",
+    "src/lab9/variant_agent.py": "e4ce19e411ad4cddd251a05808ed7f53e2faf1ef7e3484c05a26fe6d4f3d415c",
+    "src/lab9/variants.py": "1b72778c41e6521878e307abf360c0f79ebc0f6178e1cf989765e4b1fc7b352e",
+    "src/tests/test_lab9_advanced.py": "86ef918f549b2f8ba1ea0cb513b2f48c3f983a8c890f641e0755992341720788",
+    "src/tests/test_lab9_evalset.py": "d1304da7c50fbb63ea07a90a45ebb910d4ca66852b4bd0e76c74731ffa0d67f0",
+    "src/tests/test_lab9_graders.py": "4f13d899fbd43a26c49584114a776233c0b3dd131704aba4b9045f9eb6377c3b",
+    "src/tests/test_lab9_stats.py": "f918930fdf2d8430fb752107a794ac8e677fd722a18a77666eaa90d4a46b433a",
+    "src/data/eval/adversarial_v2.json": "3abfff35048256897de4734c595b09bb33ff36cd07d583793cdab0726747e294",
+    "src/data/eval/judge_tone_public.csv": "4fba6c769d2f85c004361130a6946a52102fc009337286ed5ef5f22b169c3c61",
+    "src/data/eval/judge_helpful_public.csv": "888b4542335b081dc43338b024f0039d6c49fac290272e841c71a0a9cce0a33b",
+    ".github/workflows/eval-gate.yml": "70c1d1fc8a3e6952baa598b39affcc32768311ce86b09e4132e11a618cdc0adb",
+    "src/requirements-lab9.txt": "9f8673b5b83790edceb24cf5c79a21a23e7999251f90753e265bccf3e4579ccb",
+    "src/harness_map.eval.yaml": "876e07b6d4ae487f5ae21174ac8c86f83f4d4a91058ad07b69eeaddaacac9a2f"
+  }
+}

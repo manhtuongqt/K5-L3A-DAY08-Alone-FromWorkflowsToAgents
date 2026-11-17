@@ -50,6 +50,17 @@ def test_lab9_stats_bad_inputs():
         stats.paired_bootstrap([1], [1, 2])
 
 
+def test_lab9_evalset_hash_bytes_are_platform_independent(tmp_path, monkeypatch):
+    import json
+    from lab9 import evalset
+    source = tmp_path / "public.jsonl"
+    source.write_text(json.dumps({"claim_id": "C-X", "matrix_id": "T01", "expected": {"refund_vnd": 0}}),
+                      encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    evalset.build(source)
+    assert b"\r" not in evalset.ITEMS.read_bytes()
+
+
 @pytest.mark.parametrize("text,status,actual,expected", [
     ("Dạ, LogiX đã hoàn 35.000đ cho đơn O-123.", "resolved", 35000, True),
     ("LogiX đã hoàn phí 20,000 VND cho đơn O-99 trong 3–5 ngày.", "resolved", 20000, True),

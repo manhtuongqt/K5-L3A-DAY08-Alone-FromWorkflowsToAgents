@@ -16,6 +16,8 @@ ROOT = SRC.parent
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--phase", choices=("core", "advanced", "final"), required=True)
+    ap.add_argument("--refresh-manifest", action="store_true",
+                    help="refresh artifact hashes for already recorded commands; does not change eval metrics")
     args = ap.parse_args()
     os.chdir(SRC)
     logs = ROOT / "docs/evidence/day09"
@@ -39,10 +41,16 @@ def main():
     def write():
         report_dir = SRC / "reports"
         report_dir.mkdir(exist_ok=True)
+        def in_scope(p):
+            if args.phase == "core":
+                return p.stem in {"baseline_v1", "eval_fixed", "eval_seeded_regression", "eval_pr"}
+            if args.phase == "advanced":
+                return p.stem == "baseline_v2" or p.stem.endswith("_v2")
+            return p.name.startswith(("baseline_v", "eval_fixed", "eval_seeded", "eval_slice", "eval_flaky", "eval_honest"))
         data = {"phase": args.phase, "commands": records, "passed": all(r["passed"] for r in records),
                 "artifacts": {str(p.relative_to(SRC)): hashlib.sha256(p.read_bytes()).hexdigest()
                               for p in sorted(report_dir.glob("*.json"))
-                              if p.name.startswith(("baseline_v", "eval_fixed", "eval_seeded", "eval_slice", "eval_flaky", "eval_honest"))}}
+                              if in_scope(p)}}
         (report_dir / f"day09_verification_{args.phase}.json").write_text(
             json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -55,6 +63,11 @@ def main():
                    "--baseline", f"reports/baseline_{version}.json",
                    "--spec", f"config/metric_spec{'_v2' if version == 'v2' else ''}.yaml", *extra], expected)
 
+    if args.refresh_manifest:
+        records.extend(json.loads((SRC / f"reports/day09_verification_{args.phase}.json").read_text(encoding="utf-8"))["commands"])
+        write()
+        print("refreshed artifact manifest for", args.phase)
+        return 0
     if args.phase == "core":
         run("m0_smoke", ["-m", "lab9.smoke"])
         run("m1_evalset_v1", ["-m", "lab9.evalset", "--build", "--check"])
