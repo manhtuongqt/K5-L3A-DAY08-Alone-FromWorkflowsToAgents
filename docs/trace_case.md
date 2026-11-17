@@ -2,7 +2,7 @@
 
 | Trường | Bằng chứng thực |
 |---|---|
-| Trial | seeded_regression C-002@11; thuộc run E-seeded_regression-20261117-e0d6 |
+| Trial | seeded_regression C-002@11; thuộc run E-seeded_regression-20261117-2720 |
 | Triệu chứng | status resolved thay vì denied; ledger=20.000đ, nhãn=0; reply nói đã hoàn 20.000đ |
 | Bước sai đầu tiên | Event 3, model_override, payload {"delay_days":5} |
 | Vì sao đầu tiên | Event 1 handoff chỉ công cụ read-only; event 2 investigator đọc DB đúng delay_days=2. Event 3 mới thay sự thật DB bằng ticket |

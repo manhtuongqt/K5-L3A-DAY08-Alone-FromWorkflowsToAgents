@@ -111,4 +111,3 @@ def validate(pr, base, spec, base_spec=None):
         if spec.get("seeds") != base_spec.get("seeds"):
             problems.append("ratchet changed seeds")
     return problems
-

@@ -6,7 +6,7 @@ Nhóm Alone — Nguyễn Mạnh Tường — 2A202603646.
 
 - Nền Day08: cf413f3fff56015b2f16833989e5f1e9726fba26, src/lab8/ giữ nguyên.
 - Overlay Day09: d1b9471540727d693c9eb392667b9f0d8a998bf5.
-- Eval v1: SHA e0d63d30c41e; 14 item × 5 seed 11/22/33/44/55; labels_v1.json tách riêng.
+- Eval v1: SHA 2720d20ea159; 14 item × 5 seed 11/22/33/44/55; labels_v1.json tách riêng.
 - metric_spec_version=1.0; grader trong lab9/graders.py, thống kê trong lab9/stats.py.
 - Môi trường chạy local: Python 3.11.9, pydantic-evals 2.68.0, MockLLM; judge replay, không gọi model API.
 - Code/grader commit và kết quả CI cuối được ghi trong bảng đối chiếu Day09 sau khi chốt PR.
@@ -25,7 +25,7 @@ Nhóm Alone — Nguyễn Mạnh Tường — 2A202603646.
 | pass_5 | 0.9286 | 1.0000 | 0.7143 | Theo dõi min 0.80 |
 | cost_per_success | 49.5670 | 48.7157 | 81.2020 | Chi phí mô phỏng, theo dõi tăng tối đa 10% |
 
-Nguồn máy sinh: [baseline](../src/reports/baseline_v1.json), [fixed](../src/reports/eval_fixed.json), [regression](../src/reports/eval_seeded_regression.json). Run ID lần lượt E-swarm-20261117-e0d6, E-fixed-20261117-e0d6, E-seeded_regression-20261117-e0d6.
+Nguồn máy sinh: [baseline](../src/reports/baseline_v1.json), [fixed](../src/reports/eval_fixed.json), [regression](../src/reports/eval_seeded_regression.json). Run ID lần lượt E-swarm-20261117-2720, E-fixed-20261117-2720, E-seeded_regression-20261117-2720.
 
 Delta pass_rate regression − baseline = −0.271; paired percentile CI 95% [−0.500, −0.057]. Cặp bootstrap là trung bình mỗi item qua năm seed, không phải 70 quan sát độc lập. Cấu hình 1000 resample, rng=2027. fixed và swarm PR merge; regression block vì refund_amount_correct, pass_rate, reply_ledger_consistent. [Log gate](evidence/day09/m4_gate_seeded_regression.txt).
 

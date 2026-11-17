@@ -1,7 +1,7 @@
 $ python -m lab9.trace_case --shape seeded_regression --claim C-002 --seed 11
 == seeded_regression C-002@11  lab8 grader: FAIL (status resolved != denied)
 -- trace (step, kind, payload)
-   1 handoff            {"task": "check_applicable_policy", "max_output_tokens": 400, "request_id": "REQ-C-002", "allowed_tools": ["lo
+   1 handoff            {"task": "check_applicable_policy", "facts": {}, "allowed_tools": ["lookup_order", "lookup_policy", "compute_c
    2 investigator       {"lookup_order": {"visible": true, "reason": "ok", "order": {"order_id": "O-202", "status": "delivered", "dela
    3 model_override     {"delay_days": 5}
    4 quote              {"amount_vnd": 20000, "reason": "entitled", "clause_ids": ["SHIP-LATE-03"], "parts": {"SHIP-LATE-03": 20000}}

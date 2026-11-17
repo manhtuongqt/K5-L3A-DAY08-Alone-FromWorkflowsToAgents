@@ -272,8 +272,14 @@
   ],
   "passed": true,
   "artifacts": {
-    "reports\\baseline_v1.json": "8d7763d88905b8b8a9604469f238674f5bd96b381788a3bd1526cf07feb2a66b",
-    "reports\\eval_fixed.json": "9e4877300ca43da0dec37e37c2bdc646905df8fc1a617b301a0ebd99171b6224",
-    "reports\\eval_seeded_regression.json": "2376d4401a4caafbf9ec16b62670e9796ae75c99ec27d00db228c886e3c1486f"
+    "reports\\baseline_v1.json": "ab81f951666445800b460c49cef5f36930435b6f12ddf26df2bd1081ac2382dd",
+    "reports\\baseline_v2.json": "6e6aa739e4893f7a3ca91028453c5851c047b5ac387e3a16a49c69956fc24fd4",
+    "reports\\eval_fixed.json": "600386557104743edab500e06d1096873db2236aa84dd0ab546781ffac8dafd3",
+    "reports\\eval_fixed_v2.json": "db72a5374d341f61efb540fdea551189fb59be5c94b199c92ebcf058503e17b1",
+    "reports\\eval_flaky_regression_v2.json": "a2940726e5d9772309c416eb56cd34666fec70d0e03859bb3f860d228dab1c86",
+    "reports\\eval_honest_refactor_v2.json": "0bce58308a70cbd99a315e960235f08765d369d42ccf176df2e013eaa7888970",
+    "reports\\eval_seeded_regression.json": "3feac3717b2969ca1be429b866371a2c8de6400875f5d78d8771307e2804505f",
+    "reports\\eval_seeded_regression_v2.json": "816441672fa8de16bd69282aad4d443ba1a5be2d35544229527e8fb5b7048d5b",
+    "reports\\eval_slice_regression_v2.json": "8bfb19753431b9aadeeee19b62728f46dab66a3cb2637a6e9a0cb8a27bfbe75b"
   }
 }

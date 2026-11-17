@@ -16,6 +16,11 @@ def _lab9_dependencies():
     from lab9 import gate
     from lab9.graders import ReplyLedgerConsistent
     from lab9.trace_case import investigate
+    from lab8.shapes import SHAPES
+    original = dict(SHAPES)
+    yield
+    SHAPES.clear()
+    SHAPES.update(original)
 
 
 @pytest.mark.parametrize("args", [(0, 0, 0), (5, -1, 1), (5, 6, 1), (5, 2, 0),

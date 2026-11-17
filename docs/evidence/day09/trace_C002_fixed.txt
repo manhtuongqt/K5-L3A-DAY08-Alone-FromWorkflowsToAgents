@@ -1,7 +1,7 @@
 $ python -m lab9.trace_case --shape fixed --claim C-002 --seed 11
 == fixed C-002@11  lab8 grader: PASS (ok)
 -- trace (step, kind, payload)
-   1 handoff            {"principal_scope": "owner_order_only", "request_id": "REQ-C-002", "allowed_tools": ["lookup_order", "lookup_p
+   1 handoff            {"max_output_tokens": 400, "request_id": "REQ-C-002", "task": "check_applicable_policy", "contract_version": "
    2 investigator       {"lookup_order": {"visible": true, "reason": "ok", "order": {"order_id": "O-202", "status": "delivered", "dela
    3 quote              {"amount_vnd": 0, "reason": "no_entitlement", "clause_ids": [], "parts": {}}
    4 reply              {"text": "Dạ, đơn O-202 chưa đủ điều kiện hoàn theo chính sách hiện hành."}
